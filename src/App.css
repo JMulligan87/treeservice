@@ -1,0 +1,17 @@
+.MuiToolbar-root {
+  background-color: white;
+}
+
+.MuiTypography-root {
+  color: green;
+}
+
+a.MuiTypography-colorPrimary {
+  color: green;
+  font-weight: bold;
+  /* font-size: 20px; */
+}
+
+button.MuiButton-root:hover {
+  background-color: white;
+}
