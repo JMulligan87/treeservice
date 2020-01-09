@@ -3,15 +3,16 @@
 }
 
 .MuiTypography-root {
-  color: green;
+  color: black;
 }
 
 a.MuiTypography-colorPrimary {
-  color: green;
+  color: black;
   font-weight: bold;
   /* font-size: 20px; */
 }
 
 button.MuiButton-root:hover {
   background-color: white;
+  font-size: 20px;
 }
