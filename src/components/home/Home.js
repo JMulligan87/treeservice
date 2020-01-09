@@ -44,7 +44,7 @@ const Home = () => {
             style={{
               backgroundColor: 'white',
               //   border: '1px solid black',
-              fontSize: '30px'
+              fontSize: '50px'
             }}
           >
             609-597-8846

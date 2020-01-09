@@ -23,24 +23,24 @@ const Navbar = () => {
   const classes = useStyles();
 
   return (
-    <AppBar>
+    <AppBar position='static'>
       <Toolbar>
-        <a href='/'>
+        <Link href='/'>
           <div>
             <img src={logo} alt='logo' className={classes.logo} />
           </div>
-        </a>
+        </Link>
         <Button className={classes.button}>
-          <Link href='#home'>Home</Link>
+          <Link href='/'>Home</Link>
         </Button>
         <Button className={classes.button}>
-          <Link href='#company'>Company</Link>
+          <Link href='/company'>Company</Link>
         </Button>
         <Button className={classes.button}>
-          <Link href='#services'>Services</Link>
+          <Link href='/services'>Services</Link>
         </Button>
         <Button className={classes.button}>
-          <Link href='#contact'>Contact</Link>
+          <Link href='/contact'>Contact</Link>
         </Button>
       </Toolbar>
     </AppBar>
