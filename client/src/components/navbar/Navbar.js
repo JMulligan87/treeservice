@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(2)
+  },
+  appBar: {
+    marginBottom: '50px'
   }
 }));
 
@@ -23,7 +26,7 @@ const Navbar = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position='static'>
+    <AppBar position='static' className={classes.appBar}>
       <Toolbar>
         <Link href='/'>
           <div>

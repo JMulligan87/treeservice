@@ -43,7 +43,7 @@ const Home = () => {
             href='tel:6095978846'
             style={{
               backgroundColor: 'white',
-              //   border: '1px solid black',
+              fontWeight: 400,
               fontSize: '50px'
             }}
           >

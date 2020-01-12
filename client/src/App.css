@@ -16,3 +16,10 @@ button.MuiButton-root:hover {
   background-color: white;
   font-size: 20px;
 }
+
+@media screen and (max-width: 500px) {
+  iframe {
+    width: 400px;
+    height: 250px;
+  }
+}
