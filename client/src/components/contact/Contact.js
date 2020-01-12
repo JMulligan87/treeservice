@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography, makeStyles, Link } from '@material-ui/core';
+import ContactForm from './ContactForm';
 
 const useStyles = makeStyles(theme => ({
   //   contact: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles(theme => ({
 const Contact = () => {
   const classes = useStyles();
   return (
-    <Grid container>
+    <Grid container style={{ marginTop: 50 }}>
       <Grid
         item
         className={classes.contact}
@@ -28,7 +29,7 @@ const Contact = () => {
         <Typography variant='h5' gutterBottom>
           Kenny Updegrave
         </Typography>
-        <Typography>
+        <Typography gutterBottom>
           <Link
             href='tel:6095978846'
             style={{
@@ -40,9 +41,22 @@ const Contact = () => {
             Phone: 609-597-8846
           </Link>
         </Typography>
+        <Typography gutterBottom>
+          <Link
+            href='tel:6094940266'
+            style={{
+              backgroundColor: 'white',
+              fontSize: '25px',
+              fontWeight: 400
+            }}
+          >
+            On LBI: 609-494-0266
+          </Link>
+        </Typography>
         <Typography variant='h5' gutterBottom>
           Hours: Monday to Friday, 9AM - 5PM.
         </Typography>
+        <ContactForm />
       </Grid>
       <Grid
         item

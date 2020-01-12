@@ -50,6 +50,18 @@ const Home = () => {
             609-597-8846
           </Link>
         </Typography>
+        <Typography align='center'>
+          <Link
+            href='tel:6094940266'
+            style={{
+              backgroundColor: 'white',
+              fontSize: '50px',
+              fontWeight: 400
+            }}
+          >
+            On LBI: 609-494-0266
+          </Link>
+        </Typography>
       </Grid>
     </Grid>
   );
