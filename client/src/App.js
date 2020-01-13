@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './components/navbar/Navbar';
 import Home from './components/home/Home';
-import Company from './components/company/Company';
 import Contact from './components/contact/Contact';
 import Services from './components/services/Services';
 import { MuiThemeProvider } from '@material-ui/core';
@@ -15,7 +14,6 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/company' component={Company} />
           <Route path='/services' component={Services} />
           <Route path='/contact' component={Contact} />
         </Switch>

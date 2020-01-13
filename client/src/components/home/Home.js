@@ -16,7 +16,7 @@ const Home = () => {
       />
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
         <Typography variant='h2' align='center'>
-          In business since the 1900's.
+          Providing excellent service since 1994.
         </Typography>
         <br></br>
         <Typography paragraph>
