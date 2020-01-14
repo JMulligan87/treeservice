@@ -19,7 +19,7 @@ const ContactForm = () => {
       />
       <TextField
         id='filled-full-width'
-        label='Email'
+        label='Phone'
         style={{ margin: 8 }}
         placeholder=''
         helperText=''
@@ -32,7 +32,7 @@ const ContactForm = () => {
       />
       <TextField
         id='filled-full-width'
-        label='Phone'
+        label='Address'
         style={{ margin: 8 }}
         placeholder=''
         helperText=''
@@ -47,7 +47,7 @@ const ContactForm = () => {
         id='filled-full-width'
         label='Message'
         style={{ margin: 8 }}
-        placeholder=''
+        placeholder='Please describe the work you would like done.'
         helperText=''
         fullWidth
         margin='normal'

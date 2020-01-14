@@ -16,23 +16,25 @@ button.MuiButton-root:hover {
   background-color: white;
 }
 
-.slide-container {
-  width: 70%;
-  margin: auto;
-}
-
-.each-slide > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: scale-down;
-  background-repeat: no-repeat;
-  height: 300px;
+.MuiIconButton-root:active {
+  border: none;
 }
 
 @media screen and (max-width: 500px) {
   iframe {
     width: 400px;
     height: 250px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #iconButton {
+    display: none;
   }
 }
