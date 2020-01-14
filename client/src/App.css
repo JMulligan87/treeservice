@@ -14,7 +14,6 @@ a.MuiTypography-colorPrimary {
 
 button.MuiButton-root:hover {
   background-color: white;
-  font-size: 20px;
 }
 
 @media screen and (max-width: 500px) {

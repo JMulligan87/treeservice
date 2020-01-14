@@ -1,8 +1,15 @@
 import React from 'react';
 import tree from '../../img/cut.jpg';
-import { Typography, Grid, Link } from '@material-ui/core';
+import ContactButton from '../contactButton/ContactButton';
+import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles(theme => ({
+  button: { marginBottom: '50px' }
+}));
 
 const Home = () => {
+  const classes = useStyles();
+
   return (
     <Grid container>
       <img
@@ -62,6 +69,18 @@ const Home = () => {
             On LBI: 609-494-0266
           </Link>
         </Typography>
+      </Grid>
+      <Grid
+        align='center'
+        className={classes.button}
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+      >
+        <ContactButton />
       </Grid>
     </Grid>
   );
