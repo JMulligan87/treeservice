@@ -1,5 +1,6 @@
 import React from 'react';
-import tree from '../../img/cut.jpg';
+// import tree from '../../img/cut.jpg';
+import Slider from '../slider/Slider';
 import ContactButton from '../contactButton/ContactButton';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
@@ -12,7 +13,7 @@ const Home = () => {
 
   return (
     <Grid container>
-      <img
+      {/* <img
         src={tree}
         alt='tree service'
         style={{
@@ -20,7 +21,22 @@ const Home = () => {
           height: '100%',
           width: '100%'
         }}
-      />
+      /> */}
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        style={{
+          marginTop: '1px'
+          // height: '300px',
+          // width: '500px'
+        }}
+      >
+        <Slider />
+      </Grid>
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
         <Typography variant='h2' align='center'>
           Providing excellent service since 1994.
