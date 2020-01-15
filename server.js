@@ -26,6 +26,14 @@
 const express = require('express');
 
 const app = express();
+app.use(express.json({ extended: false }));
+
+const { sendEmail } = require('./mail/mail');
+
+app.post('/api/form', (req, res) => {
+  console.log(req.body);
+  sendEmail(req.body.email, req.body.name);
+});
 
 const PORT = process.env.PORT || 5000;
 

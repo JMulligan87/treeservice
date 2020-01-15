@@ -8,7 +8,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme();
-function App() {
+
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -21,6 +22,6 @@ function App() {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
