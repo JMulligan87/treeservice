@@ -1,5 +1,4 @@
 import React from 'react';
-// import tree from '../../img/cut.jpg';
 import Slider from '../slider/Slider';
 import ContactButton from '../contactButton/ContactButton';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';

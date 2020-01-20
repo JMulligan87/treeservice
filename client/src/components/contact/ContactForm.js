@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Snackbar } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import axios from 'axios';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
 
 function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
+  const [open, setOpen] = useState(false);
 
   const handleChange = e => {
     if (e.target.id === 'name') {
@@ -30,14 +36,31 @@ function ContactForm() {
       message
     };
 
-    axios.post('/api/form', dataToSubmit);
+    name === '' || phone === '' || address === '' || message === ''
+      ? setOpen(true)
+      : axios.post('/api/form', dataToSubmit);
+
+    // Clear Fields
+    setName('');
+    setPhone('');
+    setAddress('');
+    setMessage('');
+  };
+
+  const handleClose = (_event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} required>
       <TextField
         id='name'
         label='Name'
+        required={true}
         type='text'
         value={name}
         onChange={handleChange}
@@ -54,6 +77,7 @@ function ContactForm() {
       <TextField
         id='phone'
         label='Phone'
+        required={true}
         type='text'
         value={phone}
         onChange={handleChange}
@@ -70,6 +94,7 @@ function ContactForm() {
       <TextField
         id='address'
         label='Address'
+        required={true}
         type='text'
         value={address}
         onChange={handleChange}
@@ -86,6 +111,7 @@ function ContactForm() {
       <TextField
         id='message'
         label='Message'
+        required={true}
         type='text'
         value={message}
         onChange={handleChange}
@@ -107,6 +133,11 @@ function ContactForm() {
       >
         Send Email
       </Button>
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity='error'>
+          All fields required!
+        </Alert>
+      </Snackbar>
     </form>
   );
 }
