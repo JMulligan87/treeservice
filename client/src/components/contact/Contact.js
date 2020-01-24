@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Typography, makeStyles, Link } from '@material-ui/core';
 import ContactForm from './ContactForm';
+import Icons from '../icons/Icons';
 
 const useStyles = makeStyles(theme => ({}));
 const Contact = () => {
@@ -79,6 +80,18 @@ const Contact = () => {
           frameBorder='2px'
           allowFullScreen=''
         ></iframe>
+      </Grid>
+      <Grid
+        item
+        align='center'
+        style={{ marginBottom: '50px', marginTop: '50px' }}
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+      >
+        <Icons />
       </Grid>
     </Grid>
   );

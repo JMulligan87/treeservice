@@ -3,6 +3,7 @@ import logo from '../../img/cut.JPG';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ContactButton from '../contactButton/ContactButton';
+import Icons from '../icons/Icons';
 
 const useStyles = makeStyles(theme => ({
   services: {
@@ -105,6 +106,18 @@ const Services = () => {
         xl={12}
       >
         <ContactButton />
+      </Grid>
+      <Grid
+        item
+        align='center'
+        style={{ marginBottom: '50px' }}
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+      >
+        <Icons />
       </Grid>
     </Grid>
   );

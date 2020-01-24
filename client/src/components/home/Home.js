@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../slider/Slider';
 import ContactButton from '../contactButton/ContactButton';
+import Icons from '../icons/Icons';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -91,6 +92,18 @@ const Home = () => {
         xl={12}
       >
         <ContactButton />
+      </Grid>
+      <Grid
+        item
+        align='center'
+        style={{ marginBottom: '50px' }}
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+      >
+        <Icons />
       </Grid>
     </Grid>
   );
