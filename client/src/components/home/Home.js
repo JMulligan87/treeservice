@@ -4,7 +4,14 @@ import ContactButton from '../contactButton/ContactButton';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  button: { marginBottom: '50px' }
+  button: { marginBottom: '50px' },
+  phone: {
+    fontSize: '50px',
+    backgroundColor: 'rgb(233, 232, 229)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '30px'
+    }
+  }
 }));
 
 const Home = () => {
@@ -12,15 +19,6 @@ const Home = () => {
 
   return (
     <Grid container>
-      {/* <img
-        src={tree}
-        alt='tree service'
-        style={{
-          position: 'relative',
-          height: '100%',
-          width: '100%'
-        }}
-      /> */}
       <Grid
         item
         xs={12}
@@ -29,15 +27,18 @@ const Home = () => {
         lg={12}
         xl={12}
         style={{
-          marginTop: '1px'
-          // height: '300px',
-          // width: '500px'
+          marginTop: 'none'
         }}
       >
         <Slider />
       </Grid>
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
-        <Typography variant='h2' align='center'>
+        <Typography
+          variant='h2'
+          style={{ color: 'rgb(18, 93, 55)' }}
+          align='center'
+          className='heading'
+        >
           Providing excellent service since 1994.
         </Typography>
         <br></br>
@@ -62,24 +63,18 @@ const Home = () => {
         </Typography>
         <Typography align='center'>
           <Link
+            className={classes.phone}
+            style={{ fontWeight: 300, color: 'rgb(18, 93, 55)' }}
             href='tel:6095978846'
-            style={{
-              backgroundColor: 'white',
-              fontWeight: 400,
-              fontSize: '50px'
-            }}
           >
             609-597-8846
           </Link>
         </Typography>
         <Typography align='center'>
           <Link
+            className={classes.phone}
+            style={{ fontWeight: 300, color: 'rgb(18, 93, 55)' }}
             href='tel:6094940266'
-            style={{
-              backgroundColor: 'white',
-              fontSize: '50px',
-              fontWeight: 400
-            }}
           >
             On LBI: 609-494-0266
           </Link>

@@ -2,14 +2,7 @@ import React from 'react';
 import { Grid, Typography, makeStyles, Link } from '@material-ui/core';
 import ContactForm from './ContactForm';
 
-const useStyles = makeStyles(theme => ({
-  //   contact: {
-  //     background: '#aeaeae'
-  //   },
-  //   map: {
-  //     background: '#aeaeae'
-  //   }
-}));
+const useStyles = makeStyles(theme => ({}));
 const Contact = () => {
   const classes = useStyles();
   return (
@@ -23,7 +16,11 @@ const Contact = () => {
         lg={6}
         align='center'
       >
-        <Typography variant='h3' gutterBottom>
+        <Typography
+          variant='h3'
+          style={{ fontWeight: '300', color: 'rgb(18, 93, 55)' }}
+          gutterBottom
+        >
           Contact Us
         </Typography>
         <Typography variant='h5' gutterBottom>
@@ -33,9 +30,9 @@ const Contact = () => {
           <Link
             href='tel:6095978846'
             style={{
-              backgroundColor: 'white',
               fontSize: '25px',
-              fontWeight: 400
+              fontWeight: 400,
+              backgroundColor: 'rgb(233, 232, 229)'
             }}
           >
             Phone: 609-597-8846
@@ -45,9 +42,9 @@ const Contact = () => {
           <Link
             href='tel:6094940266'
             style={{
-              backgroundColor: 'white',
               fontSize: '25px',
-              fontWeight: 400
+              fontWeight: 400,
+              backgroundColor: 'rgb(233, 232, 229)'
             }}
           >
             On LBI: 609-494-0266
@@ -67,7 +64,11 @@ const Contact = () => {
         className={classes.map}
         align='center'
       >
-        <Typography variant='h3' gutterBottom>
+        <Typography
+          variant='h3'
+          style={{ fontWeight: '300', color: 'rgb(18, 93, 55)' }}
+          gutterBottom
+        >
           Area Served
         </Typography>
         <iframe

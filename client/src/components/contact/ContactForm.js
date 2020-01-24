@@ -127,9 +127,14 @@ function ContactForm() {
         variant='filled'
       />
       <Button
-        variant='outlined'
+        variant='contained'
         onClick={handleSubmit}
-        style={{ marginBottom: 30, marginTop: 8 }}
+        style={{
+          marginBottom: 30,
+          marginTop: 8,
+          backgroundColor: 'rgb(18, 93, 55)',
+          color: 'white'
+        }}
       >
         Send Email
       </Button>

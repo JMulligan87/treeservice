@@ -1,11 +1,18 @@
 .MuiToolbar-root {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: rgb(233, 232, 229);
+}
+
+#buttons {
+  font-size: 16px;
 }
 
 .MuiTypography-root {
   color: black;
 }
-
 a.MuiTypography-colorPrimary {
   color: black;
   font-weight: bold;
@@ -16,7 +23,7 @@ button.MuiButton-root:hover {
   background-color: white;
 }
 
-.MuiIconButton-root:active {
+a.MuiIconButton-root:active {
   border: none;
 }
 
@@ -24,6 +31,9 @@ button.MuiButton-root:hover {
   iframe {
     width: 400px;
     height: 250px;
+  }
+  h2.MuiTypography-root {
+    font-size: 30px;
   }
 }
 

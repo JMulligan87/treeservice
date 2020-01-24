@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/cut.jpg';
+import logo from '../../img/cut.JPG';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ContactButton from '../contactButton/ContactButton';
@@ -7,6 +7,8 @@ import ContactButton from '../contactButton/ContactButton';
 const useStyles = makeStyles(theme => ({
   services: {
     borderStyle: 'solid',
+    borderColor: 'rgb(18, 93, 55)',
+    backgroundColor: 'white',
     borderWidth: '2px',
     width: '300px',
     marginTop: '50px'
@@ -15,6 +17,12 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: '50px',
     paddingRight: '50px',
     marginTop: '30px'
+  },
+  subheader: {
+    color: 'rgb(18, 93, 55)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '25px'
+    }
   },
   button: {
     marginTop: '30px',
@@ -28,16 +36,20 @@ const Services = () => {
   return (
     <Grid container style={{ marginTop: 100 }}>
       <Grid align='center' xs={12} sm={12} md={3} lg={3} xl={3}>
-        <Typography item variant='h2'>
+        <Typography item variant='h2' style={{ color: 'rgb(18, 93, 55)' }}>
           Services
         </Typography>
         <div className={classes.estimates}>
-          <Typography variant='h4'>Areas Covered</Typography>
+          <Typography variant='h4' className={classes.subheader}>
+            Areas Covered
+          </Typography>
           <Typography paragraph>
             We service most of southern Ocean County, NJ, including all of Long
             Beach Island, Manahawkin, Stafford Twp., Barnegat.
           </Typography>
-          <Typography variant='h4'>Free Estimates</Typography>
+          <Typography variant='h4' className={classes.subheader}>
+            Free Estimates
+          </Typography>
           <Typography paragraph>
             At Manahawkin Tree Services no job is too big, or too small. Feel
             free to call us for a free estimate, we will be happy to oblige.

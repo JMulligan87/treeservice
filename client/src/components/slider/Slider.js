@@ -1,5 +1,5 @@
 import React from 'react';
-import cut from '../../img/cut.jpg';
+import cut from '../../img/cut.JPG';
 import tree from '../../img/manatreeservice.jpg';
 
 const Slider = () => {

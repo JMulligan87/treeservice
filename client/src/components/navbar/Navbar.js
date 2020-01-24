@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2)
   },
   appBar: {
-    borderBottomColor: 'green',
+    borderBottomColor: 'rgb(18, 93, 55)',
     borderBottomStyle: 'solid',
     borderBottomWidth: '4px'
   },

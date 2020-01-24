@@ -3,9 +3,20 @@ import { Button, Link } from '@material-ui/core';
 
 const ContactButton = () => {
   return (
-    <Button variant='outlined'>
-      <Link href='/contact'>
-        LET US HELP YOU MAKE YOUR YARD A MORE ENJOYABLE AND BEAUTIFUL PLACE
+    <Button
+      variant='contained'
+      style={{
+        backgroundColor: 'rgb(18, 93, 55)',
+        color: 'white'
+      }}
+    >
+      <Link
+        href='/contact'
+        style={{
+          color: 'white'
+        }}
+      >
+        CLICK HERE TO CONTACT US
       </Link>
     </Button>
   );
