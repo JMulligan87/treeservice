@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'white',
     borderWidth: '2px',
     width: '300px',
-    marginTop: '50px'
+    marginTop: '50px',
+    textAlign: 'left'
   },
   estimates: {
     paddingLeft: '50px',
@@ -28,6 +29,12 @@ const useStyles = makeStyles(theme => ({
   button: {
     marginTop: '30px',
     marginBottom: '50px'
+  },
+  service: {
+    color: 'rgb(18, 93, 55)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '40px'
+    }
   }
 }));
 
@@ -37,7 +44,7 @@ const Services = () => {
   return (
     <Grid container style={{ marginTop: 100 }}>
       <Grid align='center' xs={12} sm={12} md={3} lg={3} xl={3}>
-        <Typography item variant='h2' style={{ color: 'rgb(18, 93, 55)' }}>
+        <Typography item variant='h2' className={classes.service}>
           Services
         </Typography>
         <div className={classes.estimates}>
@@ -68,19 +75,19 @@ const Services = () => {
       >
         <div className={classes.services}>
           <Typography variant='h5' gutterBottom>
-            Tree Removal
+            <i className='fas fa-tree'></i> Tree Removal
           </Typography>
           <Typography variant='h5' gutterBottom>
-            Stump Grinding
+            <i className='fas fa-tree'></i> Stump Grinding
           </Typography>
           <Typography variant='h5' gutterBottom>
-            Trimming
+            <i className='fas fa-tree'></i> Trimming
           </Typography>
           <Typography variant='h5' gutterBottom>
-            Pruning
+            <i className='fas fa-tree'></i> Pruning
           </Typography>
           <Typography variant='h5' gutterBottom>
-            Chipping
+            <i className='fas fa-tree'></i> Chipping
           </Typography>
         </div>
       </Grid>

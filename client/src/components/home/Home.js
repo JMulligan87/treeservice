@@ -6,6 +6,12 @@ import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   button: { marginBottom: '50px' },
+  heading: {
+    color: 'rgb(18, 93, 55)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '30px'
+    }
+  },
   phone: {
     fontSize: '50px',
     backgroundColor: 'rgb(233, 232, 229)',
@@ -34,12 +40,7 @@ const Home = () => {
         <Slider />
       </Grid>
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
-        <Typography
-          variant='h2'
-          style={{ color: 'rgb(18, 93, 55)' }}
-          align='center'
-          className='heading'
-        >
+        <Typography variant='h2' align='center' className={classes.heading}>
           Providing excellent service since 1994.
         </Typography>
         <br></br>

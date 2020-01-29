@@ -49,14 +49,20 @@ a.MuiIconButton-root:active {
   -webkit-background-clip: text;
 }
 
+.fas.fa-tree {
+  margin-left: 20px;
+  color: rgb(18, 93, 55);
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 500px) {
   iframe {
     width: 400px;
     height: 250px;
   }
-  h2.MuiTypography-root {
+  /* h2.MuiTypography-root {
     font-size: 30px;
-  }
+  } */
 }
 
 @media screen and (max-width: 992px) {

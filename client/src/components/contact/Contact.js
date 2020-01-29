@@ -3,7 +3,15 @@ import { Grid, Typography, makeStyles, Link } from '@material-ui/core';
 import ContactForm from './ContactForm';
 import Icons from '../icons/Icons';
 
-const useStyles = makeStyles(theme => ({}));
+const useStyles = makeStyles(theme => ({
+  contactHeaders: {
+    fontWeight: '300',
+    color: 'rgb(18, 93, 55)',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '40px'
+    }
+  }
+}));
 const Contact = () => {
   const classes = useStyles();
   return (
@@ -19,7 +27,7 @@ const Contact = () => {
       >
         <Typography
           variant='h3'
-          style={{ fontWeight: '300', color: 'rgb(18, 93, 55)' }}
+          className={classes.contactHeaders}
           gutterBottom
         >
           Contact Us
@@ -67,7 +75,7 @@ const Contact = () => {
       >
         <Typography
           variant='h3'
-          style={{ fontWeight: '300', color: 'rgb(18, 93, 55)' }}
+          className={classes.contactHeaders}
           gutterBottom
         >
           Area Served
