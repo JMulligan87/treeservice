@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from '../slider/Slider';
+import cut from '../../img/cut.JPG';
 import ContactButton from '../contactButton/ContactButton';
 import Icons from '../icons/Icons';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
@@ -18,6 +18,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       fontSize: '30px'
     }
+  },
+  homeImg: {
+    height: '100%',
+    width: '100%',
+    [theme.breakpoints.up('lg')]: {
+      height: '100%',
+      width: '60%',
+      marginBottom: 'none'
+    }
   }
 }));
 
@@ -27,6 +36,7 @@ const Home = () => {
   return (
     <Grid container>
       <Grid
+        align='center'
         item
         xs={12}
         sm={12}
@@ -37,7 +47,7 @@ const Home = () => {
           marginTop: 'none'
         }}
       >
-        <Slider />
+        <img className={classes.homeImg} src={cut} alt='ken' />
       </Grid>
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
         <Typography variant='h2' align='center' className={classes.heading}>

@@ -57,6 +57,9 @@ const Navbar = () => {
           <Link href='/services'>Services</Link>
         </Button>
         <Button className={classes.buttons} id='buttons'>
+          <Link href='/gallery'>Gallery</Link>
+        </Button>
+        <Button className={classes.buttons} id='buttons'>
           <Link href='/contact'>Contact</Link>
         </Button>
         <IconButton
@@ -82,6 +85,9 @@ const Navbar = () => {
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <Link href='/services'>Services</Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link href='/gallery'>Gallery</Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <Link href='/contact'>Contact</Link>
