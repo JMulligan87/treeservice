@@ -1,33 +1,42 @@
 import React from 'react';
-import cut from '../../img/cut.JPG';
+import video from '../../Videos/video.mp4';
+import crew from '../../img/crew.JPG';
 import ContactButton from '../contactButton/ContactButton';
 import Icons from '../icons/Icons';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   button: { marginBottom: '50px' },
   heading: {
     color: 'rgb(18, 93, 55)',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '30px'
-    }
+      fontSize: '30px',
+    },
   },
   phone: {
     fontSize: '50px',
     backgroundColor: 'rgb(233, 232, 229)',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '30px'
-    }
+      fontSize: '30px',
+    },
   },
-  homeImg: {
+  homeVideo: {
+    marginTop: '5px',
     height: '100%',
     width: '100%',
+    objectFit: 'fill',
+    outline: 'none',
+    borderRadius: '5px',
+    // borderColor: 'rgb(18, 93, 55)',
+    // borderStyle: 'solid',
+    // borderWidth: '4px',
+    // border: '1px solid rgb(18, 93, 55)',
     [theme.breakpoints.up('lg')]: {
       height: '100%',
       width: '60%',
-      marginBottom: 'none'
-    }
-  }
+      marginBottom: 'none',
+    },
+  },
 }));
 
 const Home = () => {
@@ -44,10 +53,19 @@ const Home = () => {
         lg={12}
         xl={12}
         style={{
-          marginTop: 'none'
+          marginTop: 'none',
         }}
       >
-        <img className={classes.homeImg} src={cut} alt='ken' />
+        <video
+          className={classes.homeVideo}
+          poster={crew}
+          src={video}
+          type='video/mp4'
+          // autoPlay
+          controls
+        >
+          Your browser does not support the video tag.
+        </video>
       </Grid>
       <Grid style={{ margin: '50px 150px 50px 150px' }}>
         <Typography variant='h2' align='center' className={classes.heading}>
