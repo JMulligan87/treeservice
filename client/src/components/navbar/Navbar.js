@@ -8,32 +8,36 @@ import logo from '../../img/manatreeservice.jpg';
 import { IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   logo: {
     maxWidth: '20%',
-    maxHeight: '20%'
+    maxHeight: '20%',
   },
   buttons: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
   },
   appBar: {
     borderBottomColor: 'rgb(18, 93, 55)',
     borderBottomStyle: 'solid',
-    borderBottomWidth: '4px'
+    borderBottomWidth: '4px',
   },
   icon: {
-    color: 'black'
-  }
+    color: 'black',
+    outline: 'none',
+  },
+  menuButton: {
+    outline: 'none',
+  },
 }));
 
 const Navbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 

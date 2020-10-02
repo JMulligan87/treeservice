@@ -76,3 +76,7 @@ a.MuiIconButton-root:active {
     display: none;
   }
 }
+
+button#iconButton.MuiButtonBase-root.MuiIconButton-root.makeStyles-menuButton-6 {
+  outline: none;
+}
