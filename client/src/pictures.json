@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "image": "/cut.JPG",
+    "title": "cut"
+  },
+  {
+    "id": 2,
+    "image": "/cut2.JPG",
+    "title": "cut"
+  },
+  {
+    "id": 3,
+    "image": "/chipper.JPG",
+    "title": "chipper"
+  },
+  {
+    "id": 4,
+    "image": "/crew.JPG",
+    "title": "crew"
+  }
+]

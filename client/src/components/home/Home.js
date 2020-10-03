@@ -6,7 +6,7 @@ import Icons from '../icons/Icons';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  button: { marginBottom: '50px' },
+  button: { marginTop: '30px', marginBottom: '50px' },
   heading: {
     color: 'rgb(18, 93, 55)',
     [theme.breakpoints.down('xs')]: {
@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
       width: '60%',
       marginBottom: 'none',
     },
+  },
+  paragraphs: {
+    marginLeft: 50,
+    marginRight: 50,
   },
 }));
 
@@ -67,19 +71,19 @@ const Home = () => {
           Your browser does not support the video tag.
         </video>
       </Grid>
-      <Grid style={{ margin: '50px 150px 50px 150px' }}>
-        <Typography variant='h2' align='center' className={classes.heading}>
+      <Grid style={{ marginTop: 50 }}>
+        <Typography variant='h4' align='center' className={classes.heading}>
           Providing excellent service since 1994.
         </Typography>
         <br></br>
-        <Typography paragraph>
+        <Typography className={classes.paragraphs} paragraph>
           Manahawkin Tree Service, a family owned and operated company takes
           great pride in the work we do. Our customers are extremely important
           to us, and we strive to keep each and every customer a customer for
           life. We will listen to your needs, do the work you request, and help
           turn your property into the yard you always dreamed of.
         </Typography>
-        <Typography paragraph>
+        <Typography className={classes.paragraphs} paragraph>
           Tree and shrub removal and/or maintenance can be difficult and
           demanding. It requires specific tools and operators trained in the use
           of these tools. Many jobs can be too dangerous or too difficult for
@@ -88,7 +92,7 @@ const Home = () => {
           while maintaining an excellent record of safety. All jobs are owner
           directed and supervised.
         </Typography>
-        <Typography paragraph align='center'>
+        <Typography className={classes.paragraphs} paragraph align='center'>
           Call us now and see what we can do to make your yard a showplace!
         </Typography>
         <Typography align='center'>
