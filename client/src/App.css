@@ -80,3 +80,8 @@ a.MuiIconButton-root:active {
 button#iconButton.MuiButtonBase-root.MuiIconButton-root.makeStyles-menuButton-6 {
   outline: none;
 }
+
+button.MuiButtonBase-root:hover {
+  background-color: white;
+  outline: none;
+}

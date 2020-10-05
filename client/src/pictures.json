@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "image": "/cut.JPG",
-    "title": "cut"
+    "image": "/crew.JPG",
+    "title": "crew"
   },
   {
     "id": 2,
-    "image": "/cut2.JPG",
-    "title": "cut"
+    "image": "/brainstorm.JPG",
+    "title": "brainstorming"
   },
   {
     "id": 3,
@@ -16,8 +16,8 @@
   },
   {
     "id": 4,
-    "image": "/crew.JPG",
-    "title": "crew"
+    "image": "/lift.JPG",
+    "title": "lift"
   },
   {
     "id": 5,
@@ -36,8 +36,8 @@
   },
   {
     "id": 8,
-    "image": "/stackingLogs.JPG",
-    "title": "stacking logs"
+    "image": "/pine2.JPG",
+    "title": "pine logs"
   },
   {
     "id": 9,
@@ -46,13 +46,13 @@
   },
   {
     "id": 10,
-    "image": "/kenny2.JPG",
-    "title": "Kenny"
+    "image": "/moving.JPG",
+    "title": "moving wood"
   },
   {
     "id": 11,
-    "image": "/lift.JPG",
-    "title": "lift"
+    "image": "/kenny2.JPG",
+    "title": "Kenny"
   },
   {
     "id": 12,

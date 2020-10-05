@@ -1,6 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, Grid, Dialog, Slide } from '@material-ui/core';
+import {
+  Card,
+  CardMedia,
+  Grid,
+  Dialog,
+  Slide,
+  AppBar,
+  Toolbar,
+  IconButton,
+} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+
 import pictures from '../../pictures.json';
 
 const useStyles = makeStyles({
@@ -12,6 +23,19 @@ const useStyles = makeStyles({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+  },
+  modalImg: {
+    maxWidth: '100%',
+    height: 'auto',
+  },
+  appBar: {
+    borderBottomColor: 'rgb(18, 93, 55)',
+    borderBottomStyle: 'solid',
+    borderBottomWidth: '4px',
+  },
+  icon: {
+    color: 'black',
+    marginLeft: 8,
   },
 });
 
@@ -48,12 +72,26 @@ export default function Cards() {
         </Grid>
       ))}
       <Dialog
+        fullScreen
         open={selectedCard}
         onClick={handleClose}
         TransitionComponent={Transition}
       >
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton
+              edge='start'
+              color='inherit'
+              onClick={handleClose}
+              aria-label='close'
+            >
+              <CloseIcon className={classes.icon} />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
         {selectedCard && (
           <img
+            className={classes.modalImg}
             src={require('../../img' + selectedCard.image)}
             alt={selectedCard.title}
           ></img>
