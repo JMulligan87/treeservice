@@ -18,5 +18,45 @@
     "id": 4,
     "image": "/crew.JPG",
     "title": "crew"
+  },
+  {
+    "id": 5,
+    "image": "/stumpGrinder.JPG",
+    "title": "stump grinder"
+  },
+  {
+    "id": 6,
+    "image": "/stumpGrinder2.JPG",
+    "title": "stump grinder"
+  },
+  {
+    "id": 7,
+    "image": "/pine.JPG",
+    "title": "pine"
+  },
+  {
+    "id": 8,
+    "image": "/stackingLogs.JPG",
+    "title": "stacking logs"
+  },
+  {
+    "id": 9,
+    "image": "/kenny.JPG",
+    "title": "Kenny"
+  },
+  {
+    "id": 10,
+    "image": "/kenny2.JPG",
+    "title": "Kenny"
+  },
+  {
+    "id": 11,
+    "image": "/lift.JPG",
+    "title": "lift"
+  },
+  {
+    "id": 12,
+    "image": "/brainstorm.JPG",
+    "title": "brainstorming"
   }
 ]

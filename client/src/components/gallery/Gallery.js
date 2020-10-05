@@ -9,6 +9,7 @@ const Gallery = () => {
     <Grid container align='center' style={{ marginTop: 50 }}>
       <Cards />
       <Grid
+        item
         xs={12}
         sm={12}
         md={12}

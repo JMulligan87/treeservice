@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, Grid } from '@material-ui/core';
+import { Card, CardMedia, Grid, Dialog, Slide } from '@material-ui/core';
 import pictures from '../../pictures.json';
 
 const useStyles = makeStyles({
   root: {
     minWidth: 175,
-    maxWidth: 400,
-    marginBottom: 20,
+    maxWidth: 410,
+    marginBottom: 10,
   },
   media: {
     height: 0,
@@ -15,21 +15,50 @@ const useStyles = makeStyles({
   },
 });
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction='up' ref={ref} {...props} />;
+});
+
 export default function Cards() {
   const classes = useStyles();
 
+  const [selectedCard, setCard] = useState(null);
+
+  const handleClickOpen = (picture) => {
+    setCard(picture);
+    console.log('clicked');
+  };
+
+  const handleClose = () => {
+    setCard(null);
+  };
+
   return (
-    <>
+    <Fragment>
       {pictures.map((picture) => (
-        <Grid xs={12} sm={6} md={6} lg={3} xl={3} item>
-          <Card key={picture.id} className={classes.root} variant='outlined'>
+        <Grid key={picture.id} xs={12} sm={6} md={6} lg={3} xl={3} item>
+          <Card className={classes.root} variant='outlined'>
             <CardMedia
               className={classes.media}
               image={require('../../img' + picture.image)}
+              alt={picture.title}
+              onClick={() => handleClickOpen(picture)}
             />
           </Card>
         </Grid>
       ))}
-    </>
+      <Dialog
+        open={selectedCard}
+        onClick={handleClose}
+        TransitionComponent={Transition}
+      >
+        {selectedCard && (
+          <img
+            src={require('../../img' + selectedCard.image)}
+            alt={selectedCard.title}
+          ></img>
+        )}
+      </Dialog>
+    </Fragment>
   );
 }

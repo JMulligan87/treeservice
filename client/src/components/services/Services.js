@@ -43,8 +43,8 @@ const Services = () => {
 
   return (
     <Grid container style={{ marginTop: 50 }}>
-      <Grid align='center' xs={12} sm={12} md={3} lg={3} xl={3}>
-        <Typography item variant='h2' className={classes.service}>
+      <Grid item align='center' xs={12} sm={12} md={3} lg={3} xl={3}>
+        <Typography variant='h2' className={classes.service}>
           Services
         </Typography>
         <div className={classes.estimates}>
@@ -65,6 +65,7 @@ const Services = () => {
         </div>
       </Grid>
       <Grid
+        item
         align='center'
         xs={12}
         sm={12}
