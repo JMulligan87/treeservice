@@ -72,7 +72,7 @@ export default function Cards() {
         </Grid>
       ))}
       <Dialog
-        fullScreen
+        maxWidth='lg'
         open={selectedCard}
         onClick={handleClose}
         TransitionComponent={Transition}
