@@ -1,9 +1,24 @@
 const express = require('express');
+
 const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
 require('dotenv').config();
 
 const app = express();
 app.use(express.json({ extended: false }));
+
+const myOAuth2Client = new OAuth2(
+  process.env.CLIENTID,
+  process.env.CLIENTSECRET,
+  'https://developers.google.com/oauthplayground'
+);
+
+myOAuth2Client.setCredentials({
+  refresh_token: process.env.REFRESHTOKEN,
+});
+
+const myAccessToken = myOAuth2Client.getAccessToken();
 
 app.post('/api/form', (req, res) => {
   console.log(req.body);
@@ -22,28 +37,29 @@ app.post('/api/form', (req, res) => {
               <br />
   `;
   // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    service: 'Gmail',
+  const transport = nodemailer.createTransport({
+    service: 'gmail',
     auth: {
-      user: process.env.EMAIL, // generated ethereal user
-      pass: process.env.PASSWORD // generated ethereal password
+      type: 'OAuth2',
+      user: process.env.EMAIL, //your gmail account you used to set the project up in google cloud console"
+      clientId: process.env.CLIENTID,
+      clientSecret: process.env.CLIENTSECRET,
+      refreshToken: process.env.REFRESHTOKEN,
+      accessToken: myAccessToken, //access token variable we defined earlier
     },
-    tls: {
-      rejectUnauthorized: false
-    }
   });
 
   // setup email data with unicode symbols
   let mailOptions = {
     from: process.env.EMAIL, // sender address
-    to: '87jmulligan@gmail.com', // list of receivers
+    to: process.env.EMAIL2, // list of receivers
     subject: 'Contact from website', // Subject line
     text: 'Hello world?', // plain text body
-    html: output // html body
+    html: output, // html body
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
+  transport.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
     }
