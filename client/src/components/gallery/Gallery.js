@@ -16,7 +16,7 @@ const Gallery = () => {
         lg={12}
         xl={12}
         align='center'
-        style={{ marginTop: 50, marginBottom: '30px' }}
+        style={{ marginTop: 50, marginBottom: 50 }}
       >
         <ContactButton />
       </Grid>

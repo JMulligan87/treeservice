@@ -3,14 +3,14 @@ import { Grid, Typography, makeStyles, Link } from '@material-ui/core';
 import ContactForm from './ContactForm';
 import Icons from '../icons/Icons';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   contactHeaders: {
     fontWeight: '300',
     color: 'rgb(18, 93, 55)',
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '40px'
-    }
-  }
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.125rem',
+    },
+  },
 }));
 const Contact = () => {
   const classes = useStyles();
@@ -41,7 +41,7 @@ const Contact = () => {
             style={{
               fontSize: '25px',
               fontWeight: 400,
-              backgroundColor: 'rgb(233, 232, 229)'
+              backgroundColor: 'rgb(233, 232, 229)',
             }}
           >
             Phone: 609-597-8846
@@ -53,7 +53,7 @@ const Contact = () => {
             style={{
               fontSize: '25px',
               fontWeight: 400,
-              backgroundColor: 'rgb(233, 232, 229)'
+              backgroundColor: 'rgb(233, 232, 229)',
             }}
           >
             On LBI: 609-494-0266

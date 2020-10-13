@@ -27,10 +27,6 @@ const useStyles = makeStyles((theme) => ({
     objectFit: 'fill',
     outline: 'none',
     borderRadius: '5px',
-    // borderColor: 'rgb(18, 93, 55)',
-    // borderStyle: 'solid',
-    // borderWidth: '4px',
-    // border: '1px solid rgb(18, 93, 55)',
     [theme.breakpoints.up('lg')]: {
       height: '100%',
       width: '60%',

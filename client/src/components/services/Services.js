@@ -11,30 +11,78 @@ const useStyles = makeStyles((theme) => ({
     borderColor: 'rgb(18, 93, 55)',
     backgroundColor: 'white',
     borderWidth: '2px',
-    width: '300px',
-    marginTop: '50px',
+    borderRadius: '5px',
+    width: '240px',
     textAlign: 'left',
+    marginBottom: '30px',
+    [theme.breakpoints.up('md')]: {
+      width: '300px',
+    },
+  },
+  serviceText: {
+    [theme.breakpoints.up('md')]: {
+      fontSize: 30,
+    },
   },
   estimates: {
     paddingLeft: '50px',
     paddingRight: '50px',
-    marginTop: '30px',
+    marginTop: '100px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '150px',
+      paddingRight: '150px',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: '75px',
+      paddingRight: '75px',
+      marginTop: 0,
+    },
   },
   subheader: {
     color: 'rgb(18, 93, 55)',
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '25px',
-    },
   },
   button: {
-    marginTop: '30px',
+    order: 4,
+    marginTop: '50px',
     marginBottom: '50px',
+    [theme.breakpoints.up('md')]: {
+      marginTop: '150px',
+    },
   },
   service: {
     color: 'rgb(18, 93, 55)',
-    [theme.breakpoints.down('xs')]: {
+    marginBottom: 20,
+    marginTop: '30px',
+
+    [theme.breakpoints.down('sm')]: {
       fontSize: '40px',
+      marginBottom: 10,
+      marginTop: 0,
     },
+  },
+  img: {
+    order: 3,
+    paddingRight: 50,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 25,
+      paddingRight: 25,
+    },
+  },
+  item1: {
+    order: 1,
+    [theme.breakpoints.down('sm')]: {
+      order: 2,
+    },
+  },
+  item2: {
+    order: 2,
+    [theme.breakpoints.down('sm')]: {
+      order: 1,
+    },
+  },
+  icon: {
+    order: 5,
   },
 }));
 
@@ -43,19 +91,29 @@ const Services = () => {
 
   return (
     <Grid container style={{ marginTop: 50 }}>
-      <Grid item align='center' xs={12} sm={12} md={3} lg={3} xl={3}>
-        <Typography variant='h2' className={classes.service}>
-          Services
-        </Typography>
+      <Grid
+        item
+        className={classes.item1}
+        align='center'
+        xs={12}
+        sm={12}
+        md={4}
+        lg={4}
+        xl={4}
+      >
         <div className={classes.estimates}>
           <Typography variant='h4' className={classes.subheader}>
             Areas Covered
           </Typography>
           <Typography paragraph>
             We service most of southern Ocean County, NJ, including all of Long
-            Beach Island, Manahawkin, Stafford Twp., Barnegat.
+            Beach Island, Manahawkin, Stafford Twp., and Barnegat.
           </Typography>
-          <Typography variant='h4' className={classes.subheader}>
+          <Typography
+            variant='h4'
+            style={{ marginTop: 50 }}
+            className={classes.subheader}
+          >
             Free Estimates
           </Typography>
           <Typography paragraph>
@@ -66,33 +124,42 @@ const Services = () => {
       </Grid>
       <Grid
         item
+        className={classes.item2}
         align='center'
         xs={12}
         sm={12}
-        md={3}
-        lg={3}
-        xl={3}
-        style={{ marginBottom: '30px' }}
+        md={4}
+        lg={4}
+        xl={4}
       >
+        <Typography variant='h3' className={classes.service}>
+          Services
+        </Typography>
         <div className={classes.services}>
-          <Typography variant='h5' gutterBottom>
+          <Typography
+            className={classes.serviceText}
+            style={{ marginTop: 10 }}
+            variant='h5'
+            gutterBottom
+          >
             <i className='fas fa-tree'></i> Tree Removal
           </Typography>
-          <Typography variant='h5' gutterBottom>
-            <i className='fas fa-tree'></i> Stump Grinding
-          </Typography>
-          <Typography variant='h5' gutterBottom>
+          <Typography className={classes.serviceText} variant='h5' gutterBottom>
             <i className='fas fa-tree'></i> Trimming
           </Typography>
-          <Typography variant='h5' gutterBottom>
+          <Typography className={classes.serviceText} variant='h5' gutterBottom>
             <i className='fas fa-tree'></i> Pruning
           </Typography>
-          <Typography variant='h5' gutterBottom>
+          <Typography className={classes.serviceText} variant='h5' gutterBottom>
             <i className='fas fa-tree'></i> Chipping
+          </Typography>
+          <Typography className={classes.serviceText} variant='h5' gutterBottom>
+            <i className='fas fa-tree'></i> Stump Grinding
           </Typography>
         </div>
       </Grid>
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+
+      <Grid className={classes.img} item xs={12} sm={12} md={4} lg={4} xl={4}>
         <img
           src={chipper}
           alt='tree service'
@@ -117,6 +184,7 @@ const Services = () => {
         <ContactButton />
       </Grid>
       <Grid
+        className={classes.icon}
         item
         align='center'
         style={{ marginBottom: '50px' }}

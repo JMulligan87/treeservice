@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Snackbar } from '@material-ui/core';
+import { TextField, Button, Snackbar, makeStyles } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 import axios from 'axios';
 
@@ -7,14 +7,27 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
 }
 
+const useStyles = makeStyles((theme) => ({
+  forms: {
+    marginLeft: 50,
+    marginRight: 50,
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: 100,
+      marginRight: 50,
+    },
+  },
+}));
+
 function ContactForm() {
+  const classes = useStyles();
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
   const [open, setOpen] = useState(false);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     if (e.target.id === 'name') {
       setName(e.target.value);
     } else if (e.target.id === 'phone') {
@@ -26,14 +39,14 @@ function ContactForm() {
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const dataToSubmit = {
       name,
       phone,
       address,
-      message
+      message,
     };
 
     name === '' || phone === '' || address === '' || message === ''
@@ -56,73 +69,73 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} required>
+    <form className={classes.forms} onSubmit={handleSubmit} required>
       <TextField
+        style={{ marginTop: 8, marginBottom: 8 }}
         id='name'
         label='Name'
         required={true}
         type='text'
         value={name}
         onChange={handleChange}
-        style={{ margin: 8 }}
         placeholder=''
         helperText=''
         fullWidth
         margin='normal'
         InputLabelProps={{
-          shrink: true
+          shrink: true,
         }}
         variant='filled'
       />
       <TextField
+        style={{ marginTop: 8, marginBottom: 8 }}
         id='phone'
         label='Phone'
         required={true}
         type='text'
         value={phone}
         onChange={handleChange}
-        style={{ margin: 8 }}
         placeholder=''
         helperText=''
         fullWidth
         margin='normal'
         InputLabelProps={{
-          shrink: true
+          shrink: true,
         }}
         variant='filled'
       />
       <TextField
+        style={{ marginTop: 8, marginBottom: 8 }}
         id='address'
         label='Address'
         required={true}
         type='text'
         value={address}
         onChange={handleChange}
-        style={{ margin: 8 }}
         placeholder=''
         helperText=''
         fullWidth
         margin='normal'
         InputLabelProps={{
-          shrink: true
+          shrink: true,
         }}
         variant='filled'
       />
       <TextField
+        style={{ marginTop: 8, marginBottom: 8 }}
         id='message'
         label='Message'
         required={true}
         type='text'
         value={message}
         onChange={handleChange}
-        style={{ margin: 8 }}
         placeholder='Please describe the work you would like done.'
         helperText=''
         fullWidth
         margin='normal'
         multiline
         InputLabelProps={{
-          shrink: true
+          shrink: true,
         }}
         variant='filled'
       />
@@ -131,9 +144,9 @@ function ContactForm() {
         onClick={handleSubmit}
         style={{
           marginBottom: 30,
-          marginTop: 8,
+          marginTop: 14,
           backgroundColor: 'rgb(18, 93, 55)',
-          color: 'white'
+          color: 'white',
         }}
       >
         Send Email
