@@ -40,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
   paragraphs: {
     marginLeft: 50,
     marginRight: 50,
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: 200,
+      marginRight: 200,
+    },
   },
 }));
 
@@ -76,14 +80,14 @@ const Home = () => {
           Providing excellent service since 1994.
         </Typography>
         <br></br>
-        <Typography className={classes.paragraphs} paragraph>
+        <Typography className={classes.paragraphs} align='center' paragraph>
           Manahawkin Tree Service, a family owned and operated company takes
           great pride in the work we do. Our customers are extremely important
           to us, and we strive to keep each and every customer a customer for
           life. We will listen to your needs, do the work you request, and help
           turn your property into the yard you always dreamed of.
         </Typography>
-        <Typography className={classes.paragraphs} paragraph>
+        <Typography className={classes.paragraphs} align='center' paragraph>
           Tree and shrub removal and/or maintenance can be difficult and
           demanding. It requires specific tools and operators trained in the use
           of these tools. Many jobs can be too dangerous or too difficult for
