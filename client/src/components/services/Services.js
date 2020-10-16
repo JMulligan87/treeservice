@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '150px',
       paddingRight: '150px',
       marginTop: 0,
+      marginBottom: 30,
     },
     [theme.breakpoints.down('xs')]: {
       paddingLeft: '75px',
@@ -54,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgb(18, 93, 55)',
     marginBottom: 20,
     marginTop: '30px',
-
     [theme.breakpoints.down('sm')]: {
       fontSize: '40px',
       marginBottom: 10,
