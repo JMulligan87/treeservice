@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField, Button, Snackbar, makeStyles } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
-import axios from 'axios';
+// import axios from 'axios';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -21,63 +21,65 @@ const useStyles = makeStyles((theme) => ({
 function ContactForm() {
   const classes = useStyles();
 
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [message, setMessage] = useState('');
-  const [open, setOpen] = useState(false);
+  // const [name, setName] = useState('');
+  // const [phone, setPhone] = useState('');
+  // const [address, setAddress] = useState('');
+  // const [message, setMessage] = useState('');
+  // const [open, setOpen] = useState(false);
 
-  const handleChange = (e) => {
-    if (e.target.id === 'name') {
-      setName(e.target.value);
-    } else if (e.target.id === 'phone') {
-      setPhone(e.target.value);
-    } else if (e.target.id === 'address') {
-      setAddress(e.target.value);
-    } else {
-      setMessage(e.target.value);
-    }
-  };
+  // const handleChange = (e) => {
+  //   if (e.target.id === 'name') {
+  //     setName(e.target.value);
+  //   } else if (e.target.id === 'phone') {
+  //     setPhone(e.target.value);
+  //   } else if (e.target.id === 'address') {
+  //     setAddress(e.target.value);
+  //   } else {
+  //     setMessage(e.target.value);
+  //   }
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const dataToSubmit = {
-      name,
-      phone,
-      address,
-      message,
-    };
+  //   const dataToSubmit = {
+  //     name,
+  //     phone,
+  //     address,
+  //     message,
+  //   };
 
-    name === '' || phone === '' || address === '' || message === ''
-      ? setOpen(true)
-      : axios.post('/api/form', dataToSubmit);
+  //   name === '' || phone === '' || address === '' || message === ''
+  //     ? setOpen(true)
+  //     : axios.post('/api/form', dataToSubmit);
 
-    // Clear Fields
-    setName('');
-    setPhone('');
-    setAddress('');
-    setMessage('');
-  };
+  //   // Clear Fields
+  //   setName('');
+  //   setPhone('');
+  //   setAddress('');
+  //   setMessage('');
+  // };
 
-  const handleClose = (_event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
+  // const handleClose = (_event, reason) => {
+  //   if (reason === 'clickaway') {
+  //     return;
+  //   }
 
-    setOpen(false);
-  };
+  //   setOpen(false);
+  // };
 
   return (
-    <form className={classes.forms} onSubmit={handleSubmit} required>
+    <form name="contact" method="post" className={classes.forms}  required>
+      <input type="hidden" name="form-name" value="contact" />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='name'
+        name='name'
         label='Name'
         required={true}
         type='text'
-        value={name}
-        onChange={handleChange}
+        // value={name}
+        // onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -90,11 +92,12 @@ function ContactForm() {
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='phone'
+        name='phone'
         label='Phone'
         required={true}
         type='text'
-        value={phone}
-        onChange={handleChange}
+        // value={phone}
+        // onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -107,11 +110,12 @@ function ContactForm() {
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='address'
+        name='address'
         label='Address'
         required={true}
         type='text'
-        value={address}
-        onChange={handleChange}
+        // value={address}
+        // onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -124,11 +128,12 @@ function ContactForm() {
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='message'
+        name='message'
         label='Message'
         required={true}
         type='text'
-        value={message}
-        onChange={handleChange}
+        // value={message}
+        // onChange={handleChange}
         placeholder='Please describe the work you would like done.'
         helperText=''
         fullWidth
@@ -141,7 +146,8 @@ function ContactForm() {
       />
       <Button
         variant='contained'
-        onClick={handleSubmit}
+        type="submit"
+        // onClick={handleSubmit}
         style={{
           marginBottom: 30,
           marginTop: 14,
@@ -151,8 +157,8 @@ function ContactForm() {
       >
         Send Email
       </Button>
-      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity='error'>
+      <Snackbar  autoHideDuration={2000} >
+        <Alert  severity='error'>
           All fields required!
         </Alert>
       </Snackbar>
