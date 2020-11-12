@@ -1,5 +1,5 @@
 import React from 'react';
-import chipper from '../../img/chipper.JPG';
+// import chipper from '../../img/chipper.JPG';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ContactButton from '../contactButton/ContactButton';
@@ -85,6 +85,8 @@ const useStyles = makeStyles((theme) => ({
     order: 5,
   },
 }));
+
+const chipper = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/chipper_-F-Tl_5V0.JPG'
 
 const Services = () => {
   const classes = useStyles();

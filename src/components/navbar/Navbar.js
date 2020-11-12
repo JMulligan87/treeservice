@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
-import logo from '../../img/manatreeservice.jpg';
+// import logo from '../../img/manatreeservice.jpg';
 import { IconButton, Menu, MenuItem } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -44,6 +44,8 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const logo = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/manatreeservice_muxXGaF0k.jpg'
 
   return (
     <AppBar position='static' className={classes.appBar}>

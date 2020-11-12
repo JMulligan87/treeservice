@@ -11,8 +11,8 @@ import {
   IconButton,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import images from './Images';
 
-import pictures from '../../pictures.json';
 
 const useStyles = makeStyles({
   root: {
@@ -47,9 +47,9 @@ export default function Cards() {
   const classes = useStyles();
 
   const [selectedCard, setCard] = useState(null);
-
-  const handleClickOpen = (picture) => {
-    setCard(picture);
+  
+  const handleClickOpen = (image) => {
+    setCard(image);
     console.log('clicked');
   };
 
@@ -59,18 +59,21 @@ export default function Cards() {
 
   return (
     <Fragment>
-      {pictures.map((picture) => (
-        <Grid key={picture.id} xs={12} sm={6} md={6} lg={3} xl={3} item>
+      {images.map((image) => (
+        <Grid key={image.id}  xs={12} sm={6} md={6} lg={3} xl={3} item>
           <Card className={classes.root} variant='outlined'>
             <CardMedia
               className={classes.media}
-              image={require('../../img' + picture.image)}
-              alt={picture.title}
-              onClick={() => handleClickOpen(picture)}
+              image={image.src}
+              alt={image.title}
+              onClick={() => handleClickOpen(image)}
             />
           </Card>
-        </Grid>
-      ))}
+          </Grid>
+  ))}
+          
+       
+        
       <Dialog
         maxWidth='lg'
         open={selectedCard}
@@ -92,8 +95,8 @@ export default function Cards() {
         {selectedCard && (
           <img
             className={classes.modalImg}
-            src={require('../../img' + selectedCard.image)}
-            alt={selectedCard.title}
+            src={selectedCard.src}
+            alt='treeservice'
           ></img>
         )}
       </Dialog>

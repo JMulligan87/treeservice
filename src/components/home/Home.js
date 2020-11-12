@@ -1,6 +1,6 @@
 import React from 'react';
 import video from '../../Videos/video.mp4';
-import crew from '../../img/crew.JPG';
+// import crew from '../../img/crew.JPG';
 import ContactButton from '../contactButton/ContactButton';
 import Icons from '../icons/Icons';
 import { Typography, Grid, Link, makeStyles } from '@material-ui/core';
@@ -42,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const crew = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/crew_sNiIZVyQk.JPG'
 
 const Home = () => {
   const classes = useStyles();
