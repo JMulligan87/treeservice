@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
-
 const useStyles = makeStyles((theme) => ({
   forms: {
     marginLeft: 50,
@@ -16,65 +15,15 @@ const useStyles = makeStyles((theme) => ({
 function ContactForm() {
   const classes = useStyles();
 
-  // const [name, setName] = useState('');
-  // const [phone, setPhone] = useState('');
-  // const [address, setAddress] = useState('');
-  // const [message, setMessage] = useState('');
-  // const [open, setOpen] = useState(false);
-
-  // const handleChange = (e) => {
-  //   if (e.target.id === 'name') {
-  //     setName(e.target.value);
-  //   } else if (e.target.id === 'phone') {
-  //     setPhone(e.target.value);
-  //   } else if (e.target.id === 'address') {
-  //     setAddress(e.target.value);
-  //   } else {
-  //     setMessage(e.target.value);
-  //   }
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const dataToSubmit = {
-  //     name,
-  //     phone,
-  //     address,
-  //     message,
-  //   };
-
-  //   name === '' || phone === '' || address === '' || message === ''
-  //     ? setOpen(true)
-  //     : fetch("/", {
-  //       method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: dataToSubmit,
-  //     });
-
-  //   // Clear Fields
-  //   setName('');
-  //   setPhone('');
-  //   setAddress('');
-  //   setMessage('');
-  // };
-
-  // const handleClose = (_event, reason) => {
-  //   if (reason === 'clickaway') {
-  //     return;
-  //   }
-
-  //   setOpen(false);
-  // };
-
   return (
-    <form name="contact"
-     method="post" 
-     action="/success/"
-     className={classes.forms}  
-     required
-     >
-      <input type="hidden" name="form-name" value="contact" />
+    <form
+      name='contact'
+      method='post'
+      action='/success'
+      className={classes.forms}
+      required
+    >
+      <input type='hidden' name='form-name' value='contact' />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='name'
@@ -130,7 +79,6 @@ function ContactForm() {
         label='Message'
         required={true}
         type='text'
-       
         placeholder='Please describe the work you would like done.'
         helperText=''
         fullWidth
@@ -143,7 +91,7 @@ function ContactForm() {
       />
       <Button
         variant='contained'
-        type="submit"
+        type='submit'
         style={{
           marginBottom: 30,
           marginTop: 14,
@@ -153,7 +101,6 @@ function ContactForm() {
       >
         Send Email
       </Button>
-      
     </form>
   );
 }
