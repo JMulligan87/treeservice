@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
@@ -13,29 +13,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const onSubmit = async (e) => {
-  e.preventDefault();
+const [name, setName] = useState('');
+const [phone, setPhone] = useState('');
+const [address, setAddress] = useState('');
+const [message, setMessage] = useState('');
 
-  const formElements = [...e.currentTarget.elements];
+const handleChange = (e) => {
+  if (e.target.id === 'name') {
+    setName(e.target.value);
+  } else if (e.target.id === 'phone') {
+    setPhone(e.target.value);
+  } else if (e.target.id === 'address') {
+    setAddress(e.target.value);
+  } else {
+    setMessage(e.target.value);
+  }
+};
 
-  formElements
-    .filter((elem) => !!elem.value)
-    .map(
-      (element) =>
-        encodeURIComponent(element.name) +
-        '=' +
-        encodeURIComponent(element.value)
-    )
-    .join('&');
+const handleSubmit = (e) => {
+  const dataToSubmit = {
+    name,
+    phone,
+    address,
+    message,
+  };
 
-  await fetch('/', {
+  fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: formElements,
+    body: encode({ 'form-name': 'contact', dataToSubmit }),
   })
-    .then(() => {
-      <Redirect to='/success-page' />;
-    })
+    .then(() => <Redirect to='/success-page' />)
     .catch((error) => alert(error));
 };
 
@@ -44,14 +52,13 @@ function ContactForm() {
 
   return (
     <form
-      name='contact v2'
+      name='contact'
       method='post'
-      action='/'
       className={classes.forms}
       required
-      onSubmit={(e) => onSubmit(e)}
+      onSubmit={handleSubmit}
     >
-      <input type='hidden' name='form-name' value='contact v2' />
+      <input type='hidden' name='form-name' value='contact' />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='name'
@@ -59,6 +66,8 @@ function ContactForm() {
         label='Name'
         required={true}
         type='text'
+        value={name}
+        onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -75,6 +84,8 @@ function ContactForm() {
         label='Phone'
         required={true}
         type='text'
+        value={phone}
+        onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -91,6 +102,8 @@ function ContactForm() {
         label='Address'
         required={true}
         type='text'
+        value={address}
+        onChange={handleChange}
         placeholder=''
         helperText=''
         fullWidth
@@ -107,6 +120,8 @@ function ContactForm() {
         label='Message'
         required={true}
         type='text'
+        value={message}
+        onChange={handleChange}
         placeholder='Please describe the work you would like done.'
         helperText=''
         fullWidth
