@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,6 +13,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const onSubmit = async (e) => {
+  e.preventDefault();
+
+  const formElements = [...e.currentTarget.elements];
+
+  formElements
+    .filter((elem) => !!elem.value)
+    .map(
+      (element) =>
+        encodeURIComponent(element.name) +
+        '=' +
+        encodeURIComponent(element.value)
+    )
+    .join('&');
+
+  await fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: formElements,
+  })
+    .then(() => {
+      <Redirect to='/success-page' />;
+    })
+    .catch((error) => alert(error));
+};
+
 function ContactForm() {
   const classes = useStyles();
 
@@ -19,9 +46,10 @@ function ContactForm() {
     <form
       name='contact v2'
       method='post'
-      action='/success-page/'
+      action='/'
       className={classes.forms}
       required
+      onSubmit={(e) => onSubmit(e)}
     >
       <input type='hidden' name='form-name' value='contact v2' />
       <TextField
