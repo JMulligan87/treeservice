@@ -13,42 +13,48 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const [name, setName] = useState('');
-const [phone, setPhone] = useState('');
-const [address, setAddress] = useState('');
-const [message, setMessage] = useState('');
-
-const handleChange = (e) => {
-  if (e.target.id === 'name') {
-    setName(e.target.value);
-  } else if (e.target.id === 'phone') {
-    setPhone(e.target.value);
-  } else if (e.target.id === 'address') {
-    setAddress(e.target.value);
-  } else {
-    setMessage(e.target.value);
-  }
-};
-
-const handleSubmit = (e) => {
-  const dataToSubmit = {
-    name,
-    phone,
-    address,
-    message,
-  };
-
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'contact', dataToSubmit }),
-  })
-    .then(() => <Redirect to='/success-page' />)
-    .catch((error) => alert(error));
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 };
 
 function ContactForm() {
   const classes = useStyles();
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e) => {
+    if (e.target.id === 'name') {
+      setName(e.target.value);
+    } else if (e.target.id === 'phone') {
+      setPhone(e.target.value);
+    } else if (e.target.id === 'address') {
+      setAddress(e.target.value);
+    } else {
+      setMessage(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    const dataToSubmit = {
+      name,
+      phone,
+      address,
+      message,
+    };
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', dataToSubmit }),
+    })
+      .then(() => <Redirect to='/success-page' />)
+      .catch((error) => alert(error));
+  };
 
   return (
     <form
