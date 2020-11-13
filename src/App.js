@@ -4,6 +4,7 @@ import Home from './components/home/Home';
 import Contact from './components/contact/Contact';
 import Services from './components/services/Services';
 import Gallery from './components/gallery/Gallery';
+import Success from './components/contact/Success'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/services' component={Services} />
           <Route path='/contact' component={Contact} />
           <Route path='/gallery' component={Gallery} />
+          <Route path='/success' component={Success} />
         </Switch>
       </Router>
     </ThemeProvider>
