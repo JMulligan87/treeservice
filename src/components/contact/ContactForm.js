@@ -26,13 +26,14 @@ function ContactForm() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const handleChange = (e) => {
-    if (e.target.id === 'name') {
+    if (e.target.name === 'name') {
       setName(e.target.value);
-    } else if (e.target.id === 'phone') {
+    } else if (e.target.name === 'phone') {
       setPhone(e.target.value);
-    } else if (e.target.id === 'address') {
+    } else if (e.target.name === 'address') {
       setAddress(e.target.value);
     } else {
       setMessage(e.target.value);
@@ -52,22 +53,27 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', dataToSubmit }),
     })
-      .then(() => <Redirect to='/success-page' />)
+      .then(setRedirect(true))
       .catch((error) => alert(error));
-  };
 
+    e.preventDefault();
+  };
+  // <input type='hidden' name='form-name' value='contact' />
+  if (redirect) {
+    return <Redirect push to={{ pathname: '/success-page' }} />;
+  }
   return (
     <form
-      name='contact'
-      method='post'
+      // name='contact'
+      // method='post'
+      // netlify
+      // netlify-honeypot='bot-field'
       className={classes.forms}
       required
       onSubmit={handleSubmit}
     >
-      <input type='hidden' name='form-name' value='contact' />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
-        id='name'
         name='name'
         label='Name'
         required={true}
@@ -85,7 +91,6 @@ function ContactForm() {
       />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
-        id='phone'
         name='phone'
         label='Phone'
         required={true}
@@ -103,7 +108,6 @@ function ContactForm() {
       />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
-        id='address'
         name='address'
         label='Address'
         required={true}
@@ -121,7 +125,6 @@ function ContactForm() {
       />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
-        id='message'
         name='message'
         label='Message'
         required={true}
