@@ -17,13 +17,13 @@ function ContactForm() {
 
   return (
     <form
-      name='contact'
+      name='contact v2'
       method='post'
       action='/success-page'
       className={classes.forms}
       required
     >
-      <input type='hidden' name='form-name' value='contact' />
+      <input type='hidden' name='form-name' value='contact v2' />
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         id='name'
