@@ -19,7 +19,7 @@ function ContactForm() {
     <form
       name='contact v2'
       method='post'
-      action='/success-page'
+      action='/success-page/'
       className={classes.forms}
       required
     >
