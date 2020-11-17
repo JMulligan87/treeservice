@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +26,7 @@ function ContactForm() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
-  // const [redirect, setRedirect] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === 'name') {
@@ -38,10 +38,6 @@ function ContactForm() {
     } else {
       setMessage(e.target.value);
     }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
     const dataToSubmit = {
       name,
@@ -49,19 +45,23 @@ function ContactForm() {
       address,
       message,
     };
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', dataToSubmit }),
     })
-      .then(window.location.replace('/success-page'))
+      .then(setRedirect(true))
       .catch((error) => alert(error));
   };
 
-  // if (redirect) {
-  //   return <Redirect push to={{ pathname: '/success-page' }} />;
-  // }
+  if (redirect) {
+    return <Redirect push to={{ pathname: '/success-page' }} />;
+  }
   return (
     <form className={classes.forms} onSubmit={handleSubmit}>
       <TextField
