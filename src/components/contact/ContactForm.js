@@ -41,6 +41,8 @@ function ContactForm() {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
     const dataToSubmit = {
       name,
       phone,
@@ -55,23 +57,13 @@ function ContactForm() {
     })
       .then(setRedirect(true))
       .catch((error) => alert(error));
-
-    e.preventDefault();
   };
-  // <input type='hidden' name='form-name' value='contact' />
+
   if (redirect) {
     return <Redirect push to={{ pathname: '/success-page' }} />;
   }
   return (
-    <form
-      // name='contact'
-      // method='post'
-      // netlify
-      // netlify-honeypot='bot-field'
-      className={classes.forms}
-      required
-      onSubmit={handleSubmit}
-    >
+    <form className={classes.forms} onSubmit={handleSubmit}>
       <TextField
         style={{ marginTop: 8, marginBottom: 8 }}
         name='name'
