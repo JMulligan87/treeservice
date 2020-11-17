@@ -35,8 +35,6 @@ function ContactForm() {
     message,
   };
 
-  console.log(dataToSubmit);
-
   const handleChange = (e) => {
     if (e.target.name === 'name') {
       setName(e.target.value);

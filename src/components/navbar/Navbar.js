@@ -45,7 +45,8 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const logo = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/manatreeservice_muxXGaF0k.jpg'
+  const logo =
+    'https://ik.imagekit.io/wr3d55jhwe/treeservice/tr:w-195,h-83/manatreeservice_muxXGaF0k.jpg';
 
   return (
     <AppBar position='static' className={classes.appBar}>
