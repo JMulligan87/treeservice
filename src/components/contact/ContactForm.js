@@ -49,13 +49,13 @@ function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    await fetch('/', {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', dataToSubmit }),
+      body: encode({ 'form-name': 'contact', ...dataToSubmit }),
     })
       .then(setRedirect(true))
       .catch((error) => alert(error));
