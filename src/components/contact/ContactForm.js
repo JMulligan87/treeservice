@@ -28,6 +28,15 @@ function ContactForm() {
   const [message, setMessage] = useState('');
   const [redirect, setRedirect] = useState(false);
 
+  const dataToSubmit = {
+    name,
+    phone,
+    address,
+    message,
+  };
+
+  console.log(dataToSubmit);
+
   const handleChange = (e) => {
     if (e.target.name === 'name') {
       setName(e.target.value);
@@ -38,13 +47,6 @@ function ContactForm() {
     } else {
       setMessage(e.target.value);
     }
-
-    const dataToSubmit = {
-      name,
-      phone,
-      address,
-      message,
-    };
   };
 
   const handleSubmit = (e) => {
