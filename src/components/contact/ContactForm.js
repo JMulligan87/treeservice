@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { TextField, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +26,7 @@ function ContactForm() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [message, setMessage] = useState('');
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === 'name') {
@@ -55,13 +55,13 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', dataToSubmit }),
     })
-      .then(setRedirect(true))
+      .then(window.location.replace('/success-page'))
       .catch((error) => alert(error));
   };
 
-  if (redirect) {
-    return <Redirect push to={{ pathname: '/success-page' }} />;
-  }
+  // if (redirect) {
+  //   return <Redirect push to={{ pathname: '/success-page' }} />;
+  // }
   return (
     <form className={classes.forms} onSubmit={handleSubmit}>
       <TextField
