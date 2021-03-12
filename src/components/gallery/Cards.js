@@ -13,7 +13,6 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 import images from './Images';
 
-
 const useStyles = makeStyles({
   root: {
     minWidth: 175,
@@ -47,7 +46,7 @@ export default function Cards() {
   const classes = useStyles();
 
   const [selectedCard, setCard] = useState(null);
-  
+
   const handleClickOpen = (image) => {
     setCard(image);
     console.log('clicked');
@@ -60,7 +59,7 @@ export default function Cards() {
   return (
     <Fragment>
       {images.map((image) => (
-        <Grid key={image.id}  xs={12} sm={6} md={6} lg={3} xl={3} item>
+        <Grid key={image.id} xs={12} sm={6} md={6} lg={3} xl={3} item>
           <Card className={classes.root} variant='outlined'>
             <CardMedia
               className={classes.media}
@@ -69,11 +68,9 @@ export default function Cards() {
               onClick={() => handleClickOpen(image)}
             />
           </Card>
-          </Grid>
-  ))}
-          
-       
-        
+        </Grid>
+      ))}
+
       <Dialog
         maxWidth='lg'
         open={selectedCard}
