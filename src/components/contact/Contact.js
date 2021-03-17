@@ -60,6 +60,9 @@ const Contact = () => {
           </Link>
         </Typography>
         <Typography variant='h5' gutterBottom>
+          Mail: PO Box 60 Manahawkin NJ, 08050
+        </Typography>
+        <Typography variant='h5' gutterBottom>
           Hours: Monday to Friday, 9AM - 5PM.
         </Typography>
         <ContactForm />
