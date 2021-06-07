@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const crew = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/crew_sNiIZVyQk.JPG'
+const crew = 'https://ik.imagekit.io/wr3d55jhwe/crew_Hz1vbmEtDl.JPG';
 
 const Home = () => {
   const classes = useStyles();

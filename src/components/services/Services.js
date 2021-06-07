@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const chipper = 'https://ik.imagekit.io/wr3d55jhwe/treeservice/chipper_-F-Tl_5V0.JPG'
+const chipper = 'https://ik.imagekit.io/wr3d55jhwe/chipper_gO53xnkrM.JPG';
 
 const Services = () => {
   const classes = useStyles();
@@ -109,7 +109,7 @@ const Services = () => {
           </Typography>
           <Typography paragraph>
             We service most of southern Ocean County, NJ, including all of Long
-            Beach Island, Manahawkin, Stafford Twp., and Barnegat.
+            Beach Island, and Stafford Twp.
           </Typography>
           <Typography
             variant='h4'
