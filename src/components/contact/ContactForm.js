@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 50,
     marginRight: 50,
     [theme.breakpoints.up('lg')]: {
-      marginLeft: 100,
-      marginRight: 50,
+      marginLeft: 300,
+      marginRight: 300,
     },
   },
 }));
